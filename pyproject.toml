@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "deep-ela"
+version = "0.1.0"
+description = "Deep Exploratory Landscape Analysis — lightweight, download-on-first-use checkpoints"
+readme = "Readme.md"  
+requires-python = ">=3.9,<3.13"
+license = { file = "LICENSE" }
+authors = [{ name = "Moritz Vinzent Seiler, Konstantin Dietrich" }]
+keywords = ["ELA", "Exploratory Landscape Analysis", "optimization", "meta-learning"]
+
+# Minimal deps:
+dependencies = [
+  "torch>=2.7.0",
+  "pyyaml>=6.0.2",
+  "lightning>=2.5.3",
+  "pydoe>=0.3.8",
+  "einops>=0.8.1",
+  "numpy>=2.3.2",
+  "pathlib>=1.0.1",
+  "pandas>=2.3.1",
+  "scipy>=1.16.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/konsdt/deep_ela"
+Issues   = "https://github.com/konsdt/deep_ela/issues"
+
+[tool.hatch.build]
+# Exclude for BOTH wheel and sdist
+exclude = [
+  "deep_ela/models/**",
+  "tests/**",
+  "examples/**",
+  "*.ipynb",
+  ".github/**",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["deep_ela"]
