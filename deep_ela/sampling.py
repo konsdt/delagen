@@ -32,7 +32,7 @@ def create_initial_sample(
       sample_coefficient: int = 50,
       lower_bound: Union[List[float], float] = 0,
       upper_bound: Union[List[float], float] = 1,
-      sample_type: str = 'lhs',
+      sample_type: str = 'random',
       seed: Optional[int] = None) -> pd.DataFrame:
       """Sampling of the decision space.
 
