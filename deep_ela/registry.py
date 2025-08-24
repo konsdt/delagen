@@ -1,4 +1,4 @@
-# Map a friendly model name -> public URL of the checkpoint
+# Maps a model name -> public URL of the checkpoint
 MODELS = {
     "large-25d-v1": {
         "ckpt_url": "https://github.com/konsdt/deep_ela/releases/download/testing/epoch.249-step.65750_backbone-large-25d-v1.ckpt",
