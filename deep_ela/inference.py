@@ -1,17 +1,17 @@
 from .registry import MODELS
 from .encoders import EncoderBackbone
-
+from pathlib import Path
 # create .cache/torch/checkpoints to store downloaded model weights
 def _cache_dir():
     # lazy loading
     # FIXME: when does it really make sense?
     from torch.hub import get_dir
-    from pathlib import Path
     d = Path(get_dir()) / "checkpoints"
     d.mkdir(parents=True, exist_ok=True)
     return d
 
-def _ensure_file(dst, url: str):
+# download if not already cached settings and parameters
+def _ensure_file(dst: Path, url: str):
     if not dst.exists():
         from torch.hub import download_url_to_file
         download_url_to_file(url, str(dst), progress=True)
@@ -48,7 +48,7 @@ class DeepELA(EncoderBackbone):
 
 
 
-def load_deepela(name: str = "medium-50d-v1", device: str = "cpu", strict: bool = True):
+def load_deepela(name: str = "large-50d-v1", device: str = "cpu"):
     if name not in MODELS:
         raise ValueError(f"Unknown model '{name}'. Available: {list(MODELS)}")
 
