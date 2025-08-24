@@ -7,22 +7,26 @@ name = "deep-ela"
 version = "0.1.0"
 description = "Deep Exploratory Landscape Analysis — lightweight, download-on-first-use checkpoints"
 readme = "Readme.md"  
-requires-python = ">=3.9,<3.13"
+requires-python = ">=3.10"
 license = { file = "LICENSE" }
 authors = [{ name = "Moritz Vinzent Seiler, Konstantin Dietrich" }]
 keywords = ["ELA", "Exploratory Landscape Analysis", "optimization", "meta-learning"]
 
 # Minimal deps:
 dependencies = [
-  "torch>=2.7.0",
-  "pyyaml>=6.0.2",
-  "lightning>=2.5.3",
-  "pydoe>=0.3.8",
-  "einops>=0.8.1",
-  "numpy>=2.3.2",
-  "pathlib>=1.0.1",
-  "pandas>=2.3.1",
-  "scipy>=1.16.1",
+  "torch",
+  "pyyaml",
+  "lightning",
+  "pydoe",
+  "einops",
+  "numpy",
+  "pandas",
+  "scipy",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8"
 ]
 
 [project.urls]
