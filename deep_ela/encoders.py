@@ -1,8 +1,9 @@
 import numpy as np
-import torch, torch.nn as nn, torch.nn.functional as F
+import torch
+import torch.nn as nn
 import lightning.pytorch as pl
 from .pytorch_modules.layers import *
-from .pytorch_modules.functional import masked_mean, convert_attn_mask_mha
+from .pytorch_modules.functional import convert_attn_mask_mha
 
 ### Model for final prediction (Does not have training layers)
 class EncoderBackbone(pl.LightningModule):
