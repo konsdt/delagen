@@ -7,5 +7,5 @@ def test_import_smoke():
     # ensure it looks like a proper module
     assert m.__spec__ is not None
 
-    assert callable(getattr(m, "creae_initial_sample", None))
+    assert callable(getattr(m, "create_initial_sample", None))
     assert callable(getattr(m, "load_deepela", None))
